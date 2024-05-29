@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: hsl(223, 87%, 63%);
+    --primaryTransparentColor: hsla(223, 75%, 77%, 0.582);
+    --secondaryColor1: hsl(223, 100%, 88%);
+    --secondaryColor2: hsl(354, 100%, 66%);
+    --naturalColor1: hsl(0, 0%, 59%);
+    --naturalColor2: hsl(209, 33%, 12%);
+    --primaryFont: Libre Franklin;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px;
+    font-family: var(--primaryFont);
+}
+
+.imageSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bold{
+    color: var(--naturalColor2);
+    font-weight: 600;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #logoSection{
+        width: 5%;
+        margin-bottom: 30px;
+    }
+
+    .detailsContainer{
+        .heading{
+            font-size: 50px;
+            font-weight: 300;
+            color: var(--naturalColor1);
+            margin-bottom: 10px;
+        }
+    
+        .description{
+            text-align: center;
+            font-size: 20px;
+            color: var(--naturalColor2);
+            margin-bottom: 25px;
+        }
+    }
+
+    .inputContainer{
+        width: 50%;
+        margin-bottom: 40px;
+
+        .inputBox{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+
+            #email{
+                height: 40px;
+                width: 70%;
+                border: 1px solid var(--naturalColor1);
+                padding-left: 20px;
+                border-radius: 20px;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+            
+            #submitBtn{
+                border: none;
+                border-radius: 20px;
+                background-color: var(--primaryColor);
+                width: 30%;
+                font-family: var(--primaryFont);
+                font-weight: 600;
+                color: white;
+                box-shadow: 0px 5px 5px var(--primaryTransparentColor);
+                transition: opacity 0.1s linear;
+
+                &:hover{
+                    cursor: pointer;
+                    opacity: 80%;
+                }
+            }
+        }
+
+        .error{
+            color: var(--secondaryColor2);
+            font-size: 12px;
+            font-weight: 500;
+            font-style: italic;
+            margin-top: 5px;
+            margin-left: 20px;
+            height: 15px;
+
+            #enter,
+            #reEnter{
+                display: none;
+            }
+        }
+    }
+
+    .lowerImageContainer{
+        width: 60%;
+        margin-bottom: 50px;
+    }
+}
+
+footer{
+    flex-direction: column;
+    color: var(--naturalColor1);
+
+    .socialMediaSection{
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+
+        .socialMedia>.imageSection{
+            width: 30px;
+            aspect-ratio: 1/1;
+
+            #Dribbble-Light-Preview{
+                &:hover{
+                    color: var(--secondaryColor2);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    body{
+        padding: 20px;
+    }
+
+    main{
+        #logoSection{
+            width: 20%;
+        }
+
+        .detailsContainer{
+            text-align: center;
+
+            .heading{
+                font-size: 20px;
+            }
+
+            .description{
+                font-size: 10px;
+            }
+        }
+
+        .inputContainer{
+            width: 100%;
+            
+            .inputBox{
+                flex-direction: column;
+                
+                #email,
+                #submitBtn{
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
