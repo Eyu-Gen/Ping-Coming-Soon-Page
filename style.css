@@ -87,20 +87,42 @@ main{
             gap: 20px;
             justify-content: space-between;
 
-            #email{
-                height: 40px;
-                width: 70%;
-                border: 1px solid var(--naturalColor1);
-                padding-left: 20px;
-                border-radius: 20px;
+            .inputWrapper{
+                width: inherit;
+                display: flex;
+                flex-direction: column;
 
-                &:focus{
-                    outline: none;
+                #email{
+                    height: 40px;
+                    width: 100%;
+                    border: 1px solid var(--naturalColor1);
+                    padding-left: 20px;
+                    border-radius: 20px;
+    
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+                .error{
+                    color: var(--secondaryColor2);
+                    font-size: 12px;
+                    font-weight: 500;
+                    font-style: italic;
+                    margin-top: 5px;
+                    margin-left: 20px;
+                    height: 15px;
+        
+                    #enter,
+                    #reEnter{
+                        display: none;
+                    }
                 }
             }
             
             #submitBtn{
                 border: none;
+                height: 40px;
                 border-radius: 20px;
                 background-color: var(--primaryColor);
                 width: 30%;
@@ -114,21 +136,6 @@ main{
                     cursor: pointer;
                     opacity: 80%;
                 }
-            }
-        }
-
-        .error{
-            color: var(--secondaryColor2);
-            font-size: 12px;
-            font-weight: 500;
-            font-style: italic;
-            margin-top: 5px;
-            margin-left: 20px;
-            height: 15px;
-
-            #enter,
-            #reEnter{
-                display: none;
             }
         }
     }
@@ -151,17 +158,11 @@ footer{
         .socialMedia>.imageSection{
             width: 30px;
             aspect-ratio: 1/1;
-
-            #Dribbble-Light-Preview{
-                &:hover{
-                    color: var(--secondaryColor2);
-                }
-            }
         }
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
     body{
         padding: 20px;
     }
@@ -188,12 +189,38 @@ footer{
             
             .inputBox{
                 flex-direction: column;
-                
-                #email,
+                gap: 5px;
+
+                .inputWrapper{                    
+                    #email{
+                        width: 100%;
+                    }
+
+                    .error{
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+
                 #submitBtn{
                     width: 100%;
                     padding: 10px;
                 }
+                
+            }
+        }
+
+        .lowerImageContainer{
+            width: 100%;
+        }
+    }
+
+    footer{
+        font-size: 10px;
+
+        .socialMediaSection{
+            .socialMedia>.imageSection{
+                width: 20px;
             }
         }
     }

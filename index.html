@@ -27,12 +27,14 @@
 
         <section class="inputContainer">
             <div class="inputBox">
-                <input type="text" placeholder="Your email address..." name="email" id="email">
+                <div class="inputWrapper">
+                    <input type="text" placeholder="Your email address..." name="email" id="email">
+                    <div class="error">
+                        <p id="enter">Email cannot be empty</p>
+                        <p id="reEnter">Please Provide a valid email</p>
+                    </div>
+                </div>
                 <button id="submitBtn">Notify Me</button>
-            </div>
-            <div class="error">
-                <p id="enter">Email cannot be empty</p>
-                <p id="reEnter">Please Provide a valid email</p>
             </div>
         </section>
 
